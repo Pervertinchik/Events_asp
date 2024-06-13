@@ -1,0 +1,53 @@
+html {
+    font-size: 14px;
+ 
+}
+
+@media (min-width: 768px) {
+    html {
+        
+    }
+   
+
+
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: Georgia, Tahoma;
+    background-color: #7FFFD4;
+    font-size: 26px;
+    
+}
+bigg {
+    font-size: 42px;
+}
+p {
+    font-size: 30px;
+}
+input {
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer {
+    background-color: white;
+}
+
+center {
+    text-align: center;
+}
+
+.nav-item-right {
+    text-align: right;
+}

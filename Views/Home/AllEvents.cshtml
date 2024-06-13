@@ -1,0 +1,131 @@
+﻿@model EventViewModel
+
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+
+    //Извлечение даты из строки события
+    string Take_date(string date_full)
+    {
+        string date = date_full.Remove(date_full.IndexOf(' '));
+        return date;
+    }
+
+    //Извлечение времени из строки события
+    string Take_time(string date_full)
+    {
+        string time = date_full.Remove(0, date_full.IndexOf(' '));
+        return time;
+    }
+
+    string Take_name(string name, int id_Date, DateTime date)
+    {
+        string idDateToString = id_Date.ToString();
+        string dateTime = date.ToString();
+        return $"{name}___;___{idDateToString}___;___{dateTime}";
+    }
+
+   // List<Event> events_date = Model.
+
+}
+
+<head>
+    <title>@ViewData["Title"] Все события</title>
+</head>
+<body>
+  <form method="post">
+        <p>Все события</p>
+
+
+        <div class="events_list">
+
+
+            <table>
+                <tr>
+                    <td>
+                        Дата и время<span style="display: inline-block; width: 10px;">
+                    </td>
+
+                    <td>
+                        Название<span style="display: inline-block; width: 10px;">
+                    </td>
+
+                    <td>
+                        Удалить  
+                    </td>
+                
+                </tr>
+                <tr>
+                    <td>
+                        <span style="display: inline-block; width: 10px; height: 5px;">
+                    </td>
+                    
+                    <td>
+                        <span style="display: inline-block; width: 10px; height: 5px;">
+                    </td>
+
+                    <td>
+                        <span style="display: inline-block; width: 10px; height: 5px;">
+                    </td>
+
+                </tr>
+
+                @foreach (var eventt in Model.eventDates)
+                {<tr>
+                    <td>
+                            @Take_date(eventt.DateTime_.Date.ToString())
+
+                    </td>
+
+
+
+                  </tr>
+                    foreach (var names in eventt.eventTimes)
+                    {
+                        <tr>
+
+
+                            <td>
+                                @Take_time(names.DateTime_.ToString()) <span style="display: inline-block; width: 10px;">
+                                    @* eventt.DateTime_.Date.ToString() *@
+                            </td>
+
+                            <td>
+                                @names.Name <span style="display: inline-block; width: 10px;">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" value="@Take_name(names.Name, names.EventDateId, names.DateTime_)" name="deleting_string_list" />
+
+                                @* @Take_name(names.Name, names.EventDateId).ToString() *@
+                                @* <a asp-action="Delete_Event" asp-controller="Home" asp>Удалить</a> *@
+                            </td>
+
+
+
+                        </tr>
+
+                    }
+
+
+                    
+                }
+
+            </table> <br />
+        </div>                 
+
+       
+
+        <input type="submit" value="Принять">
+    </form>
+    
+
+
+</body>
+
+
+
+

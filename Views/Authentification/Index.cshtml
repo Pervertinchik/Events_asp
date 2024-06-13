@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+
+<html>
+<head>
+    <title>Вход</title>
+     
+</head>
+
+<body>
+
+    <div class="center">
+   
+         
+        <form method="post">
+
+
+            <input name="login" type="text" value="Логин" align="center" /><br />
+            <input name="password" type="text" value="Пароль" align="center" /><br /> <br />
+            <input type="submit" value="Войти" /><br /> <br />
+            @Html.ActionLink("Регистрация", "Registration")
+
+        </form>
+
+    </div>
+
+   
+
+
+
+</body>
+
+</html>
+
