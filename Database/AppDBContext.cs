@@ -21,6 +21,7 @@ namespace Events_asp.Database
             var builder = WebApplication.CreateBuilder();
             var connectionString = builder.Configuration.GetConnectionString("Default");
             optionsBuilder.UseSqlServer(connectionString);
+        //
         }
 
     }
