@@ -57,7 +57,6 @@ namespace Events_asp.Controllers
             bool isLoginDublicate = false;
             using (var db = new AppDBContext())
             {
-              //  List<User> all_users = db.users.ToList();
 
               //Проверка есть ли уже такой e-mail
                 isEmailDublicate = db.users.Select(x => x.Email).Contains(email);
